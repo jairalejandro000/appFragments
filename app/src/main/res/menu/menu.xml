@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom"/>
     <item
         android:title="Ariana"
-        android:icon="@drawable/image"
+        android:icon="@drawable/ariana"
         android:id="@+id/ariana"
         app:showAsAction="ifRoom"/>
 </menu>

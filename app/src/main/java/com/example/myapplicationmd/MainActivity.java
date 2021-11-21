@@ -3,10 +3,13 @@ package com.example.myapplicationmd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -23,21 +26,31 @@ public class MainActivity extends AppCompatActivity  {
                     .add(R.id.container, new LoginfragmentActivity())
                     .commit();
         }
-
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()) {
             case R.id.jair:
-                return true;
+                Toast.makeText(this, "jairrrrr", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, new LoginfragmentActivity())
+                        .addToBackStack(null)
+                        .commit();
+                break;
             case R.id.ariana:
-                return true;
+                Toast.makeText(this, "arianaaa", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, new HomefragmentActivity())
+                        .addToBackStack(null)
+                        .commit();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
